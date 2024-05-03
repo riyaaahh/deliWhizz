@@ -14,6 +14,7 @@ const ProductsList = () => {
     {no:"3", name: "Malabar Porotta", time: "21 min", rating: "4.2", amount: "4.5" },
     {no:"4", name: "Chicken Biriyani", time: "10 min", rating: "4.2", amount: "4.7" },
     {no:"5", name: "Al faham", time: "8 min", rating: "4.2", amount: "4.0" },
+    {no:"6", name: "Shawarma", time: "7 min", rating: "4.0", amount: "7.0" },
   ];
   return (
     <div>

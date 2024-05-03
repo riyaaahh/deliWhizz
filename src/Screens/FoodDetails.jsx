@@ -1,5 +1,5 @@
 import React from "react";
-import item from "../assets/Item4.png";
+import item from "../assets/vegbiriyani.png";
 
 const FoodDetails = () => {
   const sizes = [
@@ -13,7 +13,7 @@ const FoodDetails = () => {
       <div className="m-6">
         <div className="rounded-xlpx-4 py-2 p-4 mt-4 flex justify-between items-center">
           <button className="bg-white hover:bg-red-500 border rounded-full px-4 py-2 ml-4 flex items-center">
-            <i className="fa fa-arrow-left text-gray-500 px-4 py-2"></i>
+            <i className="fa fa-angle-left text-gray-500 px-4 py-2"></i>
           </button>
           <button className="bg-white rounded-full px-4 py-2 flex items-center">
             <span className="text-black text-2xl font-bold">DETAILS</span>
@@ -27,8 +27,7 @@ const FoodDetails = () => {
             <div className="flex flex-wrap justify-center">
               <img
                 src={item}
-                className="rounded-t-md rounded-b-2xl"
-                style={{ height: "70%", width: "50%" }}
+                className="rounded-t-md rounded-b-2xl h-full w-1/4"
               />
             </div>
           </div>
