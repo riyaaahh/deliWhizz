@@ -1,5 +1,7 @@
 import React from "react";
 import item from "../assets/vegbiriyani.png";
+// import BackgroundImage from "../assets/Background.png";
+import BackgroundImage from "../assets/Frame.jpg";
 
 const FoodDetails = () => {
   const sizes = [
@@ -11,7 +13,11 @@ const FoodDetails = () => {
   return (
     <>
       <div className="m-6">
-        <div className="rounded-xlpx-4 py-2 p-4 mt-4 flex justify-between items-center">
+        <div className="rounded-xlpx-4 py-2 p-4 mt-4 flex justify-between items-center" style={{
+      backgroundImage: `url(${BackgroundImage})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+    }}>
           <button className="bg-white hover:bg-red-500 border rounded-full px-4 py-2 ml-4 flex items-center">
             <i className="fa fa-angle-left text-gray-500 px-4 py-2"></i>
           </button>
