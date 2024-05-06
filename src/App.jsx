@@ -19,6 +19,7 @@ import Login from './Screens/Login';
 import Home from './Screens/Home';
 import Cart from './Screens/Cart';
 import Onboarding from './Screens/Onbaording';
+import MyProfile from './Screens/MyProfile';
 function App() {
 
   return (
@@ -40,6 +41,7 @@ function App() {
           <Route path="/order-history" element={<OrderHistory />} />
           <Route path="/orders-upcoming" element={<OrdersUpcoming />} />
           <Route path="/order-details" element={<OrderDetails />} />
+          <Route path="/my-profile" element={<MyProfile />} />
         </Routes>
       </Router>
    </div>

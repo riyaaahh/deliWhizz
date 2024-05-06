@@ -5,7 +5,7 @@ const Checkout = () => {
     <>
       <div className="rounded-xlpx-4 py-2 p-4 mt-4 flex justify-between items-center">
         <button className="bg-white hover:bg-red-500 border rounded-lg px-2 py-2 flex items-center">
-          <i className="fa fa-angle-left text-gray-300 px-4 py-2"></i>
+          <i className="fa fa-angle-left text-gray-300 text-2xl px-4 py-2 w-12 h-12"></i>
         </button>
         <button className="bg-white rounded-full px-4 py-2 flex items-center">
           <span className="text-black text-2xl font-bold">CHECKOUT</span>
@@ -16,7 +16,7 @@ const Checkout = () => {
         <div className="flex items-center">
           <i className="fa fa-clock text-white-800 text-2xl mr-2"></i>
           <div>
-            <span className="text-black text-2xl font-bold">
+            <span className="text-black text-2xl font-bold font-avenir">
               Do you want to schedule your order?
             </span>
           </div>
@@ -38,7 +38,7 @@ const Checkout = () => {
           <button className="m-4 border border-gray-100 rounded-md">
             <i className="fa fa-credit-card text-2xl p-3"></i>
           </button>
-          <button className="text-xl font-bold mr-12">Online Payment</button>
+          <button className="text-xl font-bold mr-12 font-avenir">Online Payment</button>
           <input
             className="m-4 w-5 h-5 checked:bg-red-500 checked:border-transparent"
             type="radio"

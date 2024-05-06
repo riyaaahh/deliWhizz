@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import item from "../assets/vegbiriyani.png";
 // import BackgroundImage from "../assets/Background.png";
 import BackgroundImage from "../assets/Frame.jpg";
+import { Link } from "react-router-dom";
 
 const FoodDetails = () => {
   const sizes = [
@@ -10,6 +11,17 @@ const FoodDetails = () => {
     { qty: "1.5", measure: "kg" },
     { qty: "2", measure: "kg" },
   ];
+  const [count, setCount] = useState(1);
+  const increment = () => {
+    setCount(count + 1);
+  };
+  const decrement = () => {
+    if (count == 1) {
+      setCount(1);
+    } else {
+      setCount(count - 1);
+    }
+  };
   return (
     <>
       <div
@@ -20,23 +32,24 @@ const FoodDetails = () => {
           backgroundPosition: "center",
         }}
       >
-        <button className="bg-white hover:bg-red-500 border rounded-full px-4 py-2 flex items-center">
-          <i className="fa fa-angle-left text-gray-500 px-2 py-2"></i>
-        </button>
+        <Link to="/categories">
+          <button className="bg-white hover:bg-red-500 border p-2 rounded-2xl w-16 h-16">
+            <i className="fa fa-angle-left text-gray-500 px-2 py-2"></i>
+          </button>
+        </Link>
         <button className="bg-white rounded-full px-4 py-2 flex items-center">
           <span className="text-black text-2xl font-bold">DETAILS</span>
         </button>
-        <button className="bg-red-200 border rounded-full px-4 py-2 flex items-center">
-          <i className="fa fa-shopping-bag text-gray-500 px-2 py-2"></i>
-        </button>
+        <Link to="/cart">
+          <button className="bg-red-200 border rounded-2xl  w-16 h-16">
+            <i className="fa fa-shopping-bag text-gray-500 px-2 py-2"></i>
+          </button>
+        </Link>
       </div>
       <div className="flex flex-wrap justify-center">
         <div className="product-card mx-4 my-4 p-4 border bg-gray-50 rounded-xl shadow-md w-full">
           <div className="flex flex-wrap justify-center">
-            <img
-              src={item}
-              className="rounded-t-md rounded-b-2xl"
-            />
+            <img src={item} className="rounded-t-md rounded-b-2xl" />
           </div>
         </div>
       </div>
@@ -58,22 +71,22 @@ const FoodDetails = () => {
         </p>
       </div>
       {/* <div className="overflow-x-auto overflow-y-hidden m-5"> */}
-        <div className="row flex space-x-4 mt-8 mb-8 m-2">
-          <button className="font-bold text-xl"> Sizes: </button>
-          {sizes.map((item, index) => (
-            <button
-              className={`${
-                item.qty === "1"
-                  ? "bg-red-600 text-white"
-                  : "bg-white text-gray-400"
-              } hover:bg-red-500 rounded p-2 w-full border rounded-lg`}
-            >
-              <strong>
-                {item.qty} {item.measure}
-              </strong>
-            </button>
-          ))}
-        </div>
+      <div className="row flex space-x-4 mt-8 mb-8 m-2">
+        <button className="font-bold text-xl"> Sizes: </button>
+        {sizes.map((item, index) => (
+          <button
+            className={`${
+              item.qty === "1"
+                ? "bg-red-600 text-white"
+                : "bg-white text-gray-400"
+            } hover:bg-red-500 rounded p-2 w-full border rounded-lg`}
+          >
+            <strong>
+              {item.qty} {item.measure}
+            </strong>
+          </button>
+        ))}
+      </div>
       {/* </div> */}
       <hr />
       <div className="space-x-4 flex flex-wrap justify-center">
@@ -90,18 +103,20 @@ const FoodDetails = () => {
       <hr />
       <div className="space-x-4 flex flex-wrap justify-center">
         <div className="bg-grey-300 rounded-lg mt-8">
-          <button className="m-4 text-xl">
+          <button onClick={decrement} className="m-4 text-xl">
             <i className="fa fa-minus"></i>
           </button>
-          <button className="m-4 text-xl"> 1</button>
-          <button className="m-4 text-xl">
+          <button className="m-4 text-xl"> {count} </button>
+          <button onClick={increment} className="m-4 text-xl">
             <i className="fa fa-plus text-red-500"></i>
           </button>
         </div>
         <div className="bg-red-500 rounded-lg mt-8">
-          <button className="m-4 text-xl font-bold text-white">
-            Add to cart
-          </button>
+          <Link to="/cart">
+            <button className="m-4 text-xl font-bold text-white">
+              Add to cart
+            </button>
+          </Link>
           <button className="m-4 text-xl font-bold text-white">$15.99</button>
         </div>
       </div>

@@ -6,10 +6,10 @@ const OrdersUpcoming = () => {
     <>
       <div className="m-3">
         <div className="rounded-xl px-1 py-2 mt-4 flex justify-between items-center">
-          <button className="bg-white hover:bg-red-500 border rounded-lg px-1 py-2 flex items-center">
+          <button className="bg-white hover:bg-red-500 border rounded-2xl px-1 py-2 flex items-center">
             <i className="fa fa-angle-left text-gray-300 px-4 py-2"></i>
           </button>
-          <button className="bg-white rounded-full px-4 py-2 flex items-center">
+          <button className="bg-white rounded-full px-2 py-2 flex items-center">
             <span className="text-black text-2xl font-bold">MY ORDERS</span>
           </button>
           <div></div>
@@ -27,22 +27,22 @@ const OrdersUpcoming = () => {
             </button>
           </div>
         </div>
-        <div className="border bg-gray-50 rounded mt-6">
+        <div className="border bg-blue-50 rounded-3xl mt-6">
           <div className="overflow-x-auto overflow-y-hidden m-5">
             <div className="row flex space-x-4 justify-center">
-              <div className="px-2 py-2 bg-red-100 rounded-lg">
+              <div className="px-3 py-2 bg-red-100 rounded-xl">
                 <img className="w-6 h-6" src={successImg} alt="" />
               </div>
-              <div className="px-2 py-2 bg-yellow-100 rounded-lg">
+              <div className="px-3 py-2 bg-yellow-100 rounded-xl">
                 <img className="w-6 h-6" src={successImg} alt="" />
               </div>
-              <div className="px-2 py-2 bg-orange-100 rounded-lg">
+              <div className="px-3 py-2 bg-orange-100 rounded-xl">
                 <img className="w-6 h-6" src={successImg} alt="" />
               </div>
-              <div className="px-2 py-2 bg-blue-100 rounded-lg">
+              <div className="px-3 py-2 bg-blue-100 rounded-xl">
                 <img className="w-6 h-6" src={successImg} alt="" />
               </div>
-              <div className="px-2 py-2 bg-red-200 rounded-lg">
+              <div className="px-3 py-2 bg-red-200 rounded-xl">
                 <span className="font-bold text-red-600">+2</span>
               </div>
             </div>
@@ -64,22 +64,22 @@ const OrdersUpcoming = () => {
             </div>
           </div>
         </div>
-        <div className="border bg-gray-50 rounded mt-6">
+        <div className="border bg-blue-50 rounded-3xl mt-6">
           <div className="overflow-x-auto overflow-y-hidden m-5">
             <div className="row flex space-x-4 justify-center">
-              <div className="px-2 py-2 bg-red-100 rounded-lg">
+              <div className="px-3 py-2 bg-red-100 rounded-lg">
                 <img className="w-6 h-6" src={successImg} alt="" />
               </div>
-              <div className="px-2 py-2 bg-yellow-100 rounded-lg">
+              <div className="px-3 py-2 bg-yellow-100 rounded-xl">
                 <img className="w-6 h-6" src={successImg} alt="" />
               </div>
-              <div className="px-2 py-2 bg-orange-100 rounded-lg">
+              <div className="px-3 py-2 bg-orange-100 rounded-xl">
                 <img className="w-6 h-6" src={successImg} alt="" />
               </div>
-              <div className="px-2 py-2 bg-blue-100 rounded-lg">
+              <div className="px-3 py-2 bg-blue-100 rounded-xl">
                 <img className="w-6 h-6" src={successImg} alt="" />
               </div>
-              <div className="px-2 py-2 bg-red-200 rounded-lg">
+              <div className="px-3 py-2 bg-red-200 rounded-xl">
                 <span className="font-bold text-red-600">+2</span>
               </div>
             </div>
@@ -107,22 +107,22 @@ const OrdersUpcoming = () => {
             Latest Orders
           </span>
         </div>
-        <div className="border bg-gray-50 rounded mt-6">
+        <div className="border bg-blue-50 rounded-3xlbg-gray-50 rounded mt-6">
           <div className="overflow-x-auto overflow-y-hidden m-5">
             <div className="row flex space-x-4 justify-center">
-              <div className="px-2 py-2 bg-red-100 rounded-lg">
+              <div className="px-3 py-2 bg-red-100 rounded-xl">
                 <img className="w-6 h-6" src={successImg} alt="" />
               </div>
-              <div className="px-2 py-2 bg-yellow-100 rounded-lg">
+              <div className="px-3 py-2 bg-yellow-100 rounded-xl">
                 <img className="w-6 h-6" src={successImg} alt="" />
               </div>
-              <div className="px-2 py-2 bg-orange-100 rounded-lg">
+              <div className="px-3 py-2 bg-orange-100 rounded-xl">
                 <img className="w-6 h-6" src={successImg} alt="" />
               </div>
-              <div className="px-2 py-2 bg-blue-100 rounded-lg">
+              <div className="px-3 py-2 bg-blue-100 rounded-xl">
                 <img className="w-6 h-6" src={successImg} alt="" />
               </div>
-              <div className="px-2 py-2 bg-red-200 rounded-lg">
+              <div className="px-3 py-2 bg-red-200 rounded-xl">
                 <span className="font-bold text-red-600">+2</span>
               </div>
             </div>
@@ -144,22 +144,22 @@ const OrdersUpcoming = () => {
             </div>
           </div>
         </div>
-        <div className="border bg-gray-50 rounded mt-6">
+        <div className=" bg-blue-50 rounded-3xl mt-6">
           <div className="overflow-x-auto overflow-y-hidden m-5">
             <div className="row flex space-x-4 justify-center">
-              <div className="px-2 py-2 bg-red-100 rounded-lg">
+              <div className="px-3 py-2 bg-red-100 rounded-xl">
                 <img className="w-6 h-6" src={successImg} alt="" />
               </div>
-              <div className="px-2 py-2 bg-yellow-100 rounded-lg">
+              <div className="px-3 py-2 bg-yellow-100 rounded-xl">
                 <img className="w-6 h-6" src={successImg} alt="" />
               </div>
-              <div className="px-2 py-2 bg-orange-100 rounded-lg">
+              <div className="px-3 py-2 bg-orange-100 rounded-xl">
                 <img className="w-6 h-6" src={successImg} alt="" />
               </div>
-              <div className="px-2 py-2 bg-blue-100 rounded-lg">
+              <div className="px-3 py-2 bg-blue-100 rounded-xl">
                 <img className="w-6 h-6" src={successImg} alt="" />
               </div>
-              <div className="px-2 py-2 bg-red-200 rounded-lg">
+              <div className="px-3 py-2 bg-red-200 rounded-xl">
                 <span className="font-bold text-red-600">+2</span>
               </div>
             </div>
