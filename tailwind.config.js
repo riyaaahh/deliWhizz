@@ -6,7 +6,7 @@ module.exports = {
         240: "32rem",
       },
       fontFamily: {
-        poppins: ["Poppins", "sans-serif"],
+        poppins: ["Sen"],
       },
       colors: {
         totem: {
