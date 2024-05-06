@@ -2,7 +2,7 @@ import React from "react";
 
 const ProceedCartButton = () => {
   return (
-    <div className="rounded-xl bg-red-500 text-white p-4 flex justify-between items-center w-full ml-40 mr-40">
+    <div className="rounded-xl bg-red-500 text-white p-3 m-2 flex justify-between items-center w-full">
       <div>
         <p className="">4 items</p>
         <p className="font-bold">$63.96</p>

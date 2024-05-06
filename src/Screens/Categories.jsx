@@ -7,9 +7,9 @@ import ProceedCartButton from "./ProceedCartButton";
 
 const Categories = () => {
   return (
-    <div className="bg-gray-300">
+    // <div className="bg-gray-300">
       <>
-        <div className="mt-5 ml-5 mr-5 mb-5 bg-gray-100">
+        <div className="bg-gray-100">
           <div>
             <img
               src={HeadBanner}
@@ -21,7 +21,7 @@ const Categories = () => {
           <ProductsList />
         </div>
       </>
-    </div>
+    // </div>
   );
 };
 

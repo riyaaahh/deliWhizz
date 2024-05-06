@@ -14,8 +14,8 @@ const CategoryLists = () => {
       <div className="row flex space-x-4">
         {categories.map((item, index) => (
           <button className={`${
-            item.name === "Fast Foods" ? "bg-red-600 text-white" : "bg-white text-black "
-          } hover:bg-red-700 rounded p-3 w-full`}>
+            item.name === "Fast Foods" ? "bg-red-500 text-white" : "bg-white text-black "
+          } hover:bg-red-500 rounded-lg p-2 w-full`}>
             <strong>{item.name}</strong>
           </button>
         ))}

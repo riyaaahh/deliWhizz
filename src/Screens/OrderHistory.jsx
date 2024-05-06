@@ -38,9 +38,9 @@ const OrderHistory = () => {
   ];
   return (
     <>
-      <div className="m-6">
-        <div className="rounded-xl px-4 py-2 p-4 mt-4 flex justify-between items-center">
-          <button className="bg-white hover:bg-red-500 border rounded-lg px-2 py-2 ml-4 flex items-center">
+      <div className="m-3">
+        <div className="rounded-xl px-2 py-2 mt-4 flex justify-between items-center">
+          <button className="bg-white hover:bg-red-500 border rounded-lg px-1 py-2 flex items-center">
             <i className="fa fa-angle-left text-gray-300 px-4 py-2"></i>
           </button>
           <button className="bg-white rounded-full px-4 py-2 flex items-center">

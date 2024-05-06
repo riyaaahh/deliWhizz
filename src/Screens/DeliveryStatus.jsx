@@ -3,10 +3,10 @@ import React from "react";
 const DeliveryStatus = () => {
   return (
     <>
-      <div className="m-6">
-        <div className="rounded-xl px-4 py-2 p-4 mt-4 flex justify-between items-center">
-          <button className="bg-white hover:bg-red-500 border rounded-lg px-2 py-2 ml-4 flex items-center">
-            <i className="fa fa-angle-left text-gray-300 px-4 py-2"></i>
+      <div className="mx-3">
+        <div className="rounded-xl px-2 py-2 mt-4 flex justify-between items-center">
+          <button className="bg-white hover:bg-red-500 border rounded-lg px-1 py-2 flex items-center">
+            <i className="fa fa-angle-left text-gray-300 px-3 py-2"></i>
           </button>
           <button className="bg-white rounded-full px-4 py-2 flex items-center">
             <span className="text-black text-2xl font-bold">
@@ -27,7 +27,7 @@ const DeliveryStatus = () => {
             </div>
           </div>
         </div>
-        <div className="border bg-gray-50 rounded-md">
+        <div className="border bg-gray-50 rounded-md relative">
           <div className="flex flex-wrap justify-between items-center rounded-full px-4 py-2 mb-4">
             <button className="rounded-md text-xl font-bold">
               Track Order
@@ -50,6 +50,19 @@ const DeliveryStatus = () => {
               </div>
             </div>
           </div>
+          {/* <div
+            className="line"
+            style={{
+              height: "100px",
+              width: "1vw", // Use vw (viewport width) unit for responsive width
+              backgroundColor: "red",
+              // position: "absolute",
+              left: "16vw",
+              bottom: "90vw",
+              // transform: "translateX(-50%)",
+            }}
+          ></div> */}
+
           <div className="rounded-xl px-4 py-2 p-4 flex justify-between items-center">
             <div className="flex items-center">
               <i className="fa fa-check-circle text-red-600 text-2xl"></i>
@@ -144,7 +157,7 @@ const DeliveryStatus = () => {
           </div>
         </div>
 
-        <div className="flex justify-center">
+        <div className="flex justify-center mb-4">
           <div className="hover:border-red-500 border bg-gray-100 rounded-lg mt-8 justify-between w-1/4">
             <button className="m-4 text-xl font-bold text-red-600 block mx-auto">
               Cancel

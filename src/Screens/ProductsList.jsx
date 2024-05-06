@@ -17,13 +17,13 @@ const ProductsList = () => {
     {no:"6", name: "Shawarma", time: "7 min", rating: "4.0", amount: "7.0" },
   ];
   return (
-    <div>
+    <>
       <div className="flex flex-wrap justify-center">
         {products.map((product, index) => (
           <div
             key={index}
             onClick={handleClick}
-            className="product-card mx-4 my-4 p-4 border rounded-xl shadow-md w-64"
+            className="product-card m-2 p-2 border rounded-xl shadow-md"
           >
             <div className="relative">
               <i className="fa fa-heart absolute top-0 right-0 mt-2 mr-2 text-red-500"></i>
@@ -58,7 +58,7 @@ const ProductsList = () => {
       <div className="flex flex-wrap justify-center">
         <ProceedCartButton />
       </div>
-    </div>
+    </>
   );
 };
 
