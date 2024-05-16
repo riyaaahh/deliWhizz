@@ -2,8 +2,8 @@ import React from 'react'
 import Delivery from '../../.././assets/Delivery.png';
 const Onboarding3 = ({ handleCurrent }) => {
   return (
-    <div className='flex flex-col justify-center  '>
-      <div className='flex justify-center items-center gap-2 mt-24'>
+    <div className='flex flex-col justify-center h-screen '>
+      <div className='flex justify-center items-center gap-2 '>
         <div className='bg-red-500 p-1 px-3 rounded-full '></div>
         <div className='bg-red-300 p-1 rounded-full '></div>
         <div className='bg-red-300 p-1 rounded-full '></div>
