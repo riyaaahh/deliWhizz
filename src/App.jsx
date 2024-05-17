@@ -20,6 +20,10 @@ import Home from './Screens/Home';
 import Cart from './Screens/Cart';
 import Onboarding from './Screens/Onbaording';
 import MyProfile from './Screens/MyProfile';
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
+
+
 function App() {
 
   return (

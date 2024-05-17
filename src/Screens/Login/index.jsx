@@ -24,11 +24,11 @@ const Login1 = () => {
           </div>
           <div>
             <div class="mb-6">
-              <input placeholder='Enter Your Phone Number' maxLength={10} id="phone" name="phone" class=" text-center border border-red-500 outline-none rounded-full w-full h-16 mt-6 text-gray-700 flex items-center justify-center py-4 font-bold text-xl"></input>
+              <input placeholder='Enter Your Phone Number' maxLength={10} id="phone" name="phone" class=" text-center border border-deli-red-500 outline-none rounded-full w-full h-16 mt-6 text-gray-700 flex items-center justify-center py-4 font-bold text-xl"></input>
             </div>
           </div>
           <div className='flex flex-col gap-2'>
-            <div onClick={() => handleCurrent()} className='bg-red-500 rounded-full  px-6 py-5 text-white font-bold text-lg  text-center '><button>GET OTP</button></div>
+            <div onClick={() => handleCurrent()} className='bg-deli-red-500 rounded-full  px-6 py-5 text-white font-bold text-lg  text-center '><button>GET OTP</button></div>
           </div>
         </React.Fragment>
       }
@@ -39,13 +39,13 @@ const Login1 = () => {
           </div>
           <div>
             <div class="mb-6">
-              <input placeholder='Enter Your Full Name' name="name" class=" text-center border border-red-500 outline-none rounded-full w-full h-16 mt-6 text-gray-700 flex items-center justify-center py-4 font-bold text-xl"></input>
+              <input placeholder='Enter Your Full Name' name="name" class=" text-center border border-deli-red-500 outline-none rounded-full w-full h-16 mt-6 text-gray-700 flex items-center justify-center py-4 font-bold text-xl"></input>
             </div>
           </div>
           <Link to={'/homepage'}>
 
             <div className='flex flex-col gap-2'>
-              <div className='bg-red-500 rounded-full  px-6 py-5 text-white font-bold text-lg  text-center '><button>GET STARTED</button></div>
+              <div className='bg-deli-red-500 rounded-full  px-6 py-5 text-white font-bold text-lg  text-center '><button>GET STARTED</button></div>
             </div>
           </Link>
         </React.Fragment>
