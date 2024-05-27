@@ -1,4 +1,3 @@
-
 import React from "react";
 import Footer from "../../Components/Common/Footer";
 import HomeHeader from "./HomeHeader";
@@ -11,7 +10,7 @@ import Sliders from "./Sliders";
 import DiscountBanner from "./DiscountBanner";
 import Suggestions from "./Suggestions";
 import Stores from "./Stores";
-
+import Api from "./Apis";
 
 const Home = () => {
   return (
@@ -19,15 +18,16 @@ const Home = () => {
       <div className="m-5">
         <HomeHeader />
         <Banner />
+        {/* <Api /> */}
         <Brands />
         {/* <PopularItems /> */}
-         {/* <Categories /> */}
-         <DiscountBanner />
+        {/* <Categories /> */}
+        <DiscountBanner />
         <Recommended />
-       <Sliders />
-         <Suggestions />
+        <Sliders />
+        <Suggestions />
       </div>
-        <Stores />
+      <Stores />
       <Footer />
     </div>
   );

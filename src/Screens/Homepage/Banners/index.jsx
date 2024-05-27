@@ -71,7 +71,7 @@ const Banner = () => {
             <div className="pr-3" key={index}>
               <ProgressiveImage
                 delay={20}
-                src={ban.image}
+                src={'https://admin.corelabs.work/public/public/' + ban.image} 
                 placeholder={
                   placeHolderImage
                 }

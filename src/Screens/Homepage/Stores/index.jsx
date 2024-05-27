@@ -1,34 +1,29 @@
-import React from 'react'
+import React from "react";
 import Viceroy from "../../../assets/Viceroy.png";
-import { ClockIcon, MapPinIcon, StarIcon } from '@heroicons/react/24/solid';
-import SectionHeading from '../../../Components/Common/SectionHeading';
-import { storesList } from '../../../constants';
-import placeHolderImage from '../../../assets/placeholder.jpg'
-import ProgressiveImage from 'react-progressive-image';
+import { ClockIcon, MapPinIcon, StarIcon } from "@heroicons/react/24/solid";
+import SectionHeading from "../../../Components/Common/SectionHeading";
+import { storesList } from "../../../constants";
+import placeHolderImage from "../../../assets/placeholder.jpg";
+import ProgressiveImage from "react-progressive-image";
 
 const Stores = () => {
   return (
-    <div className='w-full px-5'>
-      {storesList?.length > 0 ?
-
+    <div className="w-full px-5">
+      {storesList?.length > 0 ? (
         <div className="mt-4">
           <div className="flex justify-between mb-2">
-
             <SectionHeading
-              text={"Stores near You" + " (" + (storesList?.length) + ")" }
+              text={"Stores near You" + " (" + storesList?.length + ")"}
             />
           </div>
-          <div className='flex flex-col gap-3 mb-[100px]'>
-
+          <div className="flex flex-col gap-3 mb-[100px]">
             {storesList?.map((store, index) => (
-              <div className="flex mt-3 gap-5 items-center ">
+              <div key={index} className="flex mt-3 gap-5 items-center ">
                 <div>
                   <ProgressiveImage
                     delay={20}
                     src={store.image}
-                    placeholder={
-                      placeHolderImage
-                    }
+                    placeholder={placeHolderImage}
                   >
                     {(src) => (
                       <img
@@ -63,7 +58,6 @@ const Stores = () => {
                       </div>
                       <div className=" text-sm text-black font-semibold">
                         {store?.time}
-
                       </div>
                     </div>
                     <div className="flex items-center ">
@@ -72,29 +66,30 @@ const Stores = () => {
                       </div>
                       <div className=" text-base text-deli-black-500 font-semibold">
                         {store?.distance}
-
                       </div>
                     </div>
                   </div>
-                  {store?.offers && store?.offers?.length > 0 &&
+                  {store?.offers && store?.offers?.length > 0 && (
                     <div className="flex mt-2 gap-2">
-                      {store?.offers?.map((store, index) => (
-                        <div className="flex items-center justify-center px-2 py-1 border border-red-500 rounded-md text-xs">
+                      {store?.offers?.map((offer, index) => (
+                        <div
+                          key={index}
+                          className="flex items-center justify-center px-2 py-1 border border-red-500 rounded-md text-xs"
+                        >
                           {" "}
-                          BUY1GET1
+                          {offer}
                         </div>
-
                       ))}
                     </div>
-                  }
+                  )}
                 </div>
               </div>
             ))}
           </div>
         </div>
-        : null}
+      ) : null}
     </div>
-  )
-}
+  );
+};
 
-export default Stores
+export default Stores;
