@@ -29,7 +29,8 @@ const Sliders = () => {
               <Link to={`/single-grocery/${category.id}`}>
                 <ProgressiveImage
                   delay={20}
-                  src={Sdeal}
+                  // src={Sdeal}
+                  src={'https://admin.corelabs.work/public/public/' + category.image} 
                   placeholder={
                     placeHolderImage
                   }

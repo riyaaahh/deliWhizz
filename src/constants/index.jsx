@@ -24,7 +24,6 @@ const fetchData = async () => {
         };
         homeBannerList.push(formattedBanner);
       });
-      
     } else {
       console.error("Error: Unexpected response format or empty data");
     }
@@ -93,130 +92,216 @@ export const homeCategoryList = [
   },
 ];
 
-export const homeRecommendedItemList = [
-  {
-    id: 1,
-    image: south,
-    name: "Sadhya",
-    size: 295,
-    price: 7.09,
-    category: "breakfast",
-  },
-  {
-    id: 2,
-    image: pizza,
-    name: "Pizza",
-    size: 171,
-    price: 4.18,
-    category: "night",
-  },
-  {
-    id: 3,
-    image: juices,
-    name: "Apple Juice",
-    size: 513,
-    price: 3.43,
-    category: "evening",
-  },
-  {
-    id: 4,
-    image: chinese,
-    name: "Chicken Noodles",
-    size: 279,
-    price: 8.6,
-    category: "breakfast",
-  },
-  {
-    id: 5,
-    image: burgers,
-    name: "Cheese Burger",
-    size: 419,
-    price: 9.16,
-    category: "evening",
-  },
-];
+export const homeRecommendedItemList = [];
 
-export const homeSlidersList = [
-  {
-    id: 1,
-    image: south,
-    name: "Sadhya",
-    size: 295,
-    price: 7.09,
-    category: "breakfast",
-  },
-  {
-    id: 2,
-    image: pizza,
-    name: "Pizza",
-    size: 171,
-    price: 4.18,
-    category: "night",
-  },
-  {
-    id: 3,
-    image: juices,
-    name: "Apple Juice",
-    size: 513,
-    price: 3.43,
-    category: "evening",
-  },
-  {
-    id: 4,
-    image: chinese,
-    name: "Chicken Noodles",
-    size: 279,
-    price: 8.6,
-    category: "breakfast",
-  },
-  {
-    id: 5,
-    image: burgers,
-    name: "Cheese Burger",
-    size: 419,
-    price: 9.16,
-    category: "evening",
-  },
-];
+const fetchRecommendedItemData = async () => {
+  try {
+    const response = await axios.get(
+      "https://admin.corelabs.work/api/home-recommented-items"
+    );
+    if (response.data && Array.isArray(response.data)) {
+      response.data.forEach((recommented) => {
+        const formattedItems = {
+          name: recommented.name,
+          image: recommented.image,
+          desc: recommented.product_description,
+          rate: 12,
+        };
+        homeRecommendedItemList.push(formattedItems);
+      });
+    } else {
+      console.error("Error: Unexpected response format or empty data");
+    }
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+};
 
-export const storesList = [
-  {
-    id: 1,
-    image:
-      "https://b.zmtcdn.com/data/pictures/7/20287/9410759d611db9c62c3acc23c1f27e06.jpg?fit=around|750:500&crop=750:500;*,*",
-    name: "KFC",
-    desc: "Lorem ipsum dolor dolo...",
-    adress: "New Bus Stand, Kasaragod",
-    offers: ["BUY1 GET 1", "10% OFF"],
-    rating: "4.5",
-    time: "30 Mins",
-    distance: "5 Km",
-  },
-  {
-    id: 2,
-    image:
-      "https://www.tastingtable.com/img/gallery/13-most-expensive-starbucks-drinks-youll-find-across-the-world/intro-1701810007.webp",
-    name: "Starbucks",
-    desc: "Lorem ipsum dolor dolo...",
-    adress: "New Bus Stand, Kasaragod",
-    offers: ["BUY1 GET 1"],
-    rating: "4.5",
-    time: "30 Mins",
-    distance: "5 Km",
-  },
-  {
-    id: 3,
-    image:
-      "https://play-lh.googleusercontent.com/_lq2HX0YJNDrr0EeUebLAB2JsGbRGyoFY-XOnuUFTPfeEqaHNIyMOGqLx-oq4mUWPpn0",
-    name: "Dominos Pizza",
-    desc: "Lorem ipsum dolor dolo...",
-    adress: "New Bus Stand, Kasaragod",
-    offers: [],
-    rating: "4.5",
-    time: "30 Mins",
-    distance: "5 Km",
-  },
-];
+fetchRecommendedItemData();
+// export const homeRecommendedItemList = [
+//   {
+//     id: 1,
+//     image: south,
+//     name: "Sadhya",
+//     size: 295,
+//     price: 7.09,
+//     category: "breakfast",
+//   },
+//   {
+//     id: 2,
+//     image: pizza,
+//     name: "Pizza",
+//     size: 171,
+//     price: 4.18,
+//     category: "night",
+//   },
+//   {
+//     id: 3,
+//     image: juices,
+//     name: "Apple Juice",
+//     size: 513,
+//     price: 3.43,
+//     category: "evening",
+//   },
+//   {
+//     id: 4,
+//     image: chinese,
+//     name: "Chicken Noodles",
+//     size: 279,
+//     price: 8.6,
+//     category: "breakfast",
+//   },
+//   {
+//     id: 5,
+//     image: burgers,
+//     name: "Cheese Burger",
+//     size: 419,
+//     price: 9.16,
+//     category: "evening",
+//   },
+// ];
+
+export const homeSlidersList = [];
+
+const fetchSliderData = async () => {
+  try {
+    const response = await axios.get("https://admin.corelabs.work/api/sliders");
+    if (response.data && Array.isArray(response.data.sliders)) {
+      response.data.sliders.forEach((slider) => {
+        const linkedProducts = JSON.parse(slider.linked_products || "[]");
+        const formattedSlider = {
+          id: slider.id,
+          image: slider.image,
+          linkedProducts: linkedProducts.map((product) => ({
+            id: product.id,
+            name: product.name,
+          })),
+        };
+        homeSlidersList.push(formattedSlider);
+      });
+      // console.log(homeSlidersList);
+    } else {
+      console.error("Error: Unexpected response format or empty data");
+    }
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+};
+
+fetchSliderData();
+// export const homeSlidersList = [
+//   {
+//     id: 1,
+//     image: south,
+//     name: "Sadhya",
+//     size: 295,
+//     price: 7.09,
+//     category: "breakfast",
+//   },
+//   {
+//     id: 2,
+//     image: pizza,
+//     name: "Pizza",
+//     size: 171,
+//     price: 4.18,
+//     category: "night",
+//   },
+//   {
+//     id: 3,
+//     image: juices,
+//     name: "Apple Juice",
+//     size: 513,
+//     price: 3.43,
+//     category: "evening",
+//   },
+//   {
+//     id: 4,
+//     image: chinese,
+//     name: "Chicken Noodles",
+//     size: 279,
+//     price: 8.6,
+//     category: "breakfast",
+//   },
+//   {
+//     id: 5,
+//     image: burgers,
+//     name: "Cheese Burger",
+//     size: 419,
+//     price: 9.16,
+//     category: "evening",
+//   },
+// ];
+
+export const storesList = [];
+
+const fetchStoresData = async () => {
+  try {
+    const response = await axios.get(
+      "https://admin.corelabs.work/api/list-all-shops"
+    );
+    if (response && Array.isArray(response.data)) {
+      response.data.forEach((shop) => {
+        const formattedShop = {
+          id: shop.id,
+          name: shop.name,
+          logo: shop.logo,
+          deliveryRadius: shop.delivery_radius,
+          latitude: shop.latitude,
+          longitude: shop.longitude,
+          googleMapsKey: shop.google_maps_key,
+          isActive: shop.is_active,
+        };
+        storesList.push(formattedShop);
+      });
+      // console.log(storesList);
+    } else {
+      console.error("Error: Unexpected response format or empty data");
+    }
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+};
+
+fetchStoresData();
+
+// export const storesList = [
+//   {
+//     id: 1,
+//     image:
+//       "https://b.zmtcdn.com/data/pictures/7/20287/9410759d611db9c62c3acc23c1f27e06.jpg?fit=around|750:500&crop=750:500;*,*",
+//     name: "KFC",
+//     desc: "Lorem ipsum dolor dolo...",
+//     adress: "New Bus Stand, Kasaragod",
+//     offers: ["BUY1 GET 1", "10% OFF"],
+//     rating: "4.5",
+//     time: "30 Mins",
+//     distance: "5 Km",
+//   },
+//   {
+//     id: 2,
+//     image:
+//       "https://www.tastingtable.com/img/gallery/13-most-expensive-starbucks-drinks-youll-find-across-the-world/intro-1701810007.webp",
+//     name: "Starbucks",
+//     desc: "Lorem ipsum dolor dolo...",
+//     adress: "New Bus Stand, Kasaragod",
+//     offers: ["BUY1 GET 1"],
+//     rating: "4.5",
+//     time: "30 Mins",
+//     distance: "5 Km",
+//   },
+//   {
+//     id: 3,
+//     image:
+//       "https://play-lh.googleusercontent.com/_lq2HX0YJNDrr0EeUebLAB2JsGbRGyoFY-XOnuUFTPfeEqaHNIyMOGqLx-oq4mUWPpn0",
+//     name: "Dominos Pizza",
+//     desc: "Lorem ipsum dolor dolo...",
+//     adress: "New Bus Stand, Kasaragod",
+//     offers: [],
+//     rating: "4.5",
+//     time: "30 Mins",
+//     distance: "5 Km",
+//   },
+// ];
 export const homeItemsList = [
   {
     id: 1,
@@ -540,3 +625,29 @@ export const homeItemsList = [
     category: "night",
   },
 ];
+
+export const homeSuggestedItems = [];
+
+const fetchSuggestedData = async () => {
+  try {
+    const response = await axios.get(
+      "https://admin.corelabs.work/api/home-recommented-items"
+    );
+    if (response.data && Array.isArray(response.data)) {
+      response.data.forEach((suggested) => {
+        const formattedSuggestions = {
+          name: suggested.name,
+          image: suggested.image,
+          desc: suggested.product_description,
+        };
+        homeSuggestedItems.push(formattedSuggestions);
+      });
+    } else {
+      console.error("Error: Unexpected response format or empty data");
+    }
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+};
+
+fetchSuggestedData();

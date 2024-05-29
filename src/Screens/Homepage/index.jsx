@@ -11,21 +11,30 @@ import DiscountBanner from "./DiscountBanner";
 import Suggestions from "./Suggestions";
 import Stores from "./Stores";
 import Api from "./Apis";
+import { homeBannerList } from "../../constants";
+import ApiBanners from "./Banners/ApiBanners";
+import ApiSliders from "./Sliders/ApiSliders";
+import ApiRecommented from "./Recommended/ApiRecommented";
+import ApiSuggestions from "./Suggestions/ApiSuggestions";
 
 const Home = () => {
   return (
     <div className="">
       <div className="m-5">
         <HomeHeader />
-        <Banner />
+        {/* <Banner /> */}
+        <ApiBanners />
         {/* <Api /> */}
         <Brands />
         {/* <PopularItems /> */}
         {/* <Categories /> */}
         <DiscountBanner />
-        <Recommended />
-        <Sliders />
-        <Suggestions />
+        {/* <Recommended /> */}
+        <ApiRecommented />
+        {/* <Sliders /> */}
+        <ApiSliders />
+        {/* <Suggestions /> */}
+        <ApiSuggestions />
       </div>
       <Stores />
       <Footer />

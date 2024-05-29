@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import Card from "../../../assets/Card.png";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { homeBannerList } from "../../../constants";
 import placeHolderImage from "../../../assets/placeholder.jpg";
 import Slider from "react-slick";
@@ -20,8 +20,9 @@ const CustomDot = ({ isActive, size }) => {
   );
 };
 
-const Banner = () => {
-  // const [length, setlength] = useState(5);
+const ApiBanners = () => {
+  const [banners, setBanners] = useState([]);
+
   const [slide, setSlide] = useState(0);
 
   const settings = {
@@ -57,6 +58,22 @@ const Banner = () => {
     afterChange: (current, next) => setSlide(current),
   };
 
+  const fetchBanners = async () => {
+    try {
+      const response = await axios.get(
+        "https://admin.corelabs.work/api/banners"
+      );
+      setBanners(response.data.banners);
+    } catch (error) {
+      console.error("Error fetching banners:", error);
+      setBanners([]); 
+    }
+  };
+
+  useEffect(() => {
+    fetchBanners();
+  }, []);
+
   return (
     <div className="mt-4 h-full mb-8">
       {homeBannerList?.length > 0 ? (
@@ -87,4 +104,4 @@ const Banner = () => {
   );
 };
 
-export default Banner;
+export default ApiBanners;
