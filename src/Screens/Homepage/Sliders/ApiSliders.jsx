@@ -44,7 +44,7 @@ const ApiSliders = () => {
                   className="flex flex-col items-center justify-center text-center"
                   key={index}
                 >
-                  <Link to={`/single-grocery/${category.id}`}>
+                  {/* <Link key={index} to={`/single-product/${category.id}`}> */}
                     <ProgressiveImage
                       delay={20}
                       // src={Sdeal}
@@ -72,7 +72,7 @@ const ApiSliders = () => {
                         />
                       )}
                     </ProgressiveImage>
-                  </Link>
+                  {/* </Link> */}
                 </div>
               ))}
             </div>

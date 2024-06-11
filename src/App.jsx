@@ -21,6 +21,8 @@ import Cart from './Screens/Cart';
 import Onboarding from './Screens/Onbaording';
 import MyProfile from './Screens/MyProfile';
 import Api from './Screens/Homepage/Apis';
+import SingleSlider from './Screens/Homepage/Stores/SingleSlider';
+import SingleProduct from './Screens/Homepage/Stores/SingleProduct';
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
 
@@ -48,6 +50,8 @@ function App() {
           <Route path="/order-details" element={<OrderDetails />} />
           <Route path="/my-profile" element={<MyProfile />} />
           <Route path="/api" element={<Api />} />
+          <Route path="/single-product/:productId" element={<SingleProduct />} />
+          <Route path="/single-store/:storeId" element={<SingleSlider />} />
         </Routes>
       </Router>
    </div>

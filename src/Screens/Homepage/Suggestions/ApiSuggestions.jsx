@@ -6,6 +6,8 @@ import { homeSuggestedItems } from "../../../constants";
 import ProgressiveImage from "react-progressive-image";
 import placeHolderImage from "../../../assets/placeholder.jpg";
 import axios from "axios";
+import { Link } from "react-router-dom";
+
 
 const ApiSuggestions = () => {
   const [suggestions, setSuggestions] = useState([]);
@@ -36,34 +38,36 @@ const ApiSuggestions = () => {
 
           <div className="flex overflow-y-auto gap-4 mt-3 hidden-scroll-bar">
             {homeSuggestedItems?.map((item, index) => (
-              <div
-                key={index}
-                className="justify-center flex flex-col items-center text-center bg-whisper-500 rounded-xl px-4"
-              >
+              <Link key={index} to={`/single-product/${item.id}`}>
                 <div
-                  className="mt-6"
-                  style={{ height: "100px", width: "100px" }}
+                  key={index}
+                  className="justify-center flex flex-col items-center text-center bg-whisper-500 rounded-xl px-4"
                 >
-                  <img
-                    src={`https://admin.corelabs.work/uploads/img/${item.image}`}
-                    style={{
-                      objectFit: "cover",
-                      height: "100%",
-                      width: "100%",
-                    }}
-                    className="rounded-md"
-                    alt={item.name}
-                    onError={(e) => {
-                      e.target.src = placeHolderImage;
-                    }} 
-                  />
+                  <div
+                    className="mt-6"
+                    style={{ height: "100px", width: "100px" }}
+                  >
+                    <img
+                      src={`https://admin.corelabs.work/uploads/img/${item.image}`}
+                      style={{
+                        objectFit: "cover",
+                        height: "100%",
+                        width: "100%",
+                      }}
+                      className="rounded-md"
+                      alt={item.name}
+                      onError={(e) => {
+                        e.target.src = placeHolderImage;
+                      }}
+                    />
+                  </div>
+                  <div>
+                    <div className="font-bold text-xl mt-2">{item.name}</div>
+                    <div className="text-xs">{item.desc}</div>
+                    <div className="text-black font-bold text-xl">$15.99</div>
+                  </div>
                 </div>
-                <div>
-                  <div className="font-bold text-xl mt-2">{item.name}</div>
-                  <div className="text-xs">{item.desc}</div>
-                  <div className="text-black font-bold text-xl">$15.99</div>
-                </div>
-              </div>
+              </Link>
             ))}
 
             {/* <div className="justify-center flex flex-col items-center text-center bg-whisper-500  rounded-xl px-4 pb-8  ml-4">

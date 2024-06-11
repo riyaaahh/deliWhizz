@@ -4,6 +4,7 @@ import placeHolderImage from "../../../assets/placeholder.jpg";
 import ProgressiveImage from "react-progressive-image";
 import SectionHeading from "../../../Components/Common/SectionHeading";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const ApiRecommented = () => {
   const [recomments, setRecomments] = useState([]);
@@ -37,6 +38,7 @@ const ApiRecommented = () => {
           >
             <div className="flex overflow-y-auto gap-6 mt-3 hidden-scroll-bar">
               {homeRecommendedItemList?.map((item, index) => (
+                 <Link key={index} to={`/single-product/${item.id}`}>
                 <div
                   key={index}
                   className="px-3 py-4 gap-5 flex flex-row items-center  bg-whisper-500  rounded-lg min-w-[90vw] max-h-[180px]"
@@ -69,6 +71,7 @@ const ApiRecommented = () => {
                     </div>
                   </div>
                 </div>
+                </Link>
               ))}
             </div>
           </div>

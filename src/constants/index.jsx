@@ -102,6 +102,7 @@ const fetchRecommendedItemData = async () => {
     if (response.data && Array.isArray(response.data)) {
       response.data.forEach((recommented) => {
         const formattedItems = {
+          id: recommented.id,
           name: recommented.name,
           image: recommented.image,
           desc: recommented.product_description,
@@ -636,6 +637,7 @@ const fetchSuggestedData = async () => {
     if (response.data && Array.isArray(response.data)) {
       response.data.forEach((suggested) => {
         const formattedSuggestions = {
+          id: suggested.id,
           name: suggested.name,
           image: suggested.image,
           desc: suggested.product_description,
