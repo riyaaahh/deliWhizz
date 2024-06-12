@@ -39,7 +39,7 @@ const Stores = () => {
           </div>
           <div className="flex flex-col gap-3 mb-[100px]">
             {storesList?.map((store, index) => (
-              <Link to={`/single-store/${store.id}`}  key={index}>
+              <Link to={`/single-store/${store.id}`} key={index}>
                 <div key={index} className="flex mt-3 gap-5 items-center">
                   <div>
                     <ProgressiveImage

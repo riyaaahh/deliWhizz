@@ -32,9 +32,7 @@ const SingleSlider = () => {
     };
 
     fetchData();
-  }, [storeId]); // Dependency added to re-fetch data when storeId changes
-
-  // Handle error
+  }, [storeId]);
   if (error) {
     return <div>Error: {error}</div>;
   }
@@ -42,10 +40,12 @@ const SingleSlider = () => {
   // Render content when data is available
   return (
     <div className="container mx-auto p-4">
-        <HomeHeader />
+      <HomeHeader />
       {data && (
         <>
-          <h2 className="text-2xl font-semibold mb-4 mt-4">Store: {data[0].name}</h2>
+          <h2 className="text-2xl font-semibold mb-4 mt-4">
+            Store: {data[0].name}
+          </h2>
           <div className="border border-gray-200 p-4 rounded-lg mb-4">
             <ProgressiveImage
               src={`https://admin.corelabs.work/uploads/business_logos/${data[0].logo}`}
