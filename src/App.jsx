@@ -23,6 +23,7 @@ import MyProfile from './Screens/MyProfile';
 import Api from './Screens/Homepage/Apis';
 import SingleSlider from './Screens/Homepage/Stores/SingleSlider';
 import SingleProduct from './Screens/Homepage/Stores/SingleProduct';
+import BannersList from './Screens/Homepage/Banners/BannersList';
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
 
@@ -52,6 +53,8 @@ function App() {
           <Route path="/api" element={<Api />} />
           <Route path="/single-product/:productId" element={<SingleProduct />} />
           <Route path="/single-store/:storeId" element={<SingleSlider />} />
+          <Route path="/banners" element={<BannersList />} />
+
         </Routes>
       </Router>
    </div>

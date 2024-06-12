@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from "react";
 import ProgressiveImage from "react-progressive-image";
 import { Link, useParams } from "react-router-dom";
-import {
-  MapPinIcon,
-  ClockIcon,
-  StarIcon,
-  CurrencyRupeeIcon,
-} from "@heroicons/react/24/solid";
+import { CurrencyRupeeIcon } from "@heroicons/react/24/solid";
 import HomeHeader from "../HomeHeader";
 import Footer from "../../../Components/Common/Footer";
+import { useSelector, useDispatch } from "react-redux";
+import { increment, decrement } from "../../../redux/cartSlice";
 
 const SingleProduct = () => {
   const { productId } = useParams();
@@ -21,16 +18,15 @@ const SingleProduct = () => {
     { qty: "2", measure: "kg" },
   ];
 
-  const [count, setCount] = useState(1);
-  const increment = () => {
-    setCount(count + 1);
+  const count = useSelector((state) => state.cart.count);
+  const dispatch = useDispatch();
+
+  const handleIncrement = () => {
+    dispatch(increment());
   };
-  const decrement = () => {
-    if (count == 1) {
-      setCount(1);
-    } else {
-      setCount(count - 1);
-    }
+
+  const handleDecrement = () => {
+    dispatch(decrement());
   };
 
   useEffect(() => {
@@ -132,11 +128,11 @@ const SingleProduct = () => {
           </div>
           <div className="space-x-4 flex flex-wrap justify-center">
             <div className="bg-grey-300 rounded-lg mt-8">
-              <button onClick={decrement} className="m-4 text-xl">
+              <button onClick={handleDecrement} className="m-4 text-xl">
                 <i className="fa fa-minus"></i>
               </button>
               <button className="m-4 text-xl"> {count} </button>
-              <button onClick={increment} className="m-4 text-xl">
+              <button onClick={handleIncrement} className="m-4 text-xl">
                 <i className="fa fa-plus text-red-500"></i>
               </button>
             </div>
@@ -148,18 +144,18 @@ const SingleProduct = () => {
               </Link>
               <button className="m-4 text-xl font-bold text-white">
                 ₹
-                {parseFloat(data[0].variations[0].default_sell_price * count).toFixed(
-                  2
-                )}
+                {parseFloat(
+                  data[0].variations[0].default_sell_price * count
+                ).toFixed(2)}
               </button>
             </div>
+            <Footer />
           </div>
           <br />
           <br /> <br />
           <br />
         </>
       )}
-      <Footer />
     </div>
   );
 };
